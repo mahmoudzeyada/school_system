@@ -1,0 +1,21 @@
+<h1>Quizz Detail</h1>
+quizzname: {{quizz.name}} <br>
+no.of .takers: {{total_taken}} <br>
+avg_score:{{quizz_avg_score.avg_score|default_if_none:0.0}}<br>
+questions:
+{%for question in quizz.question.all%}
+    {{question.txt}}
+    <a href="{%url "teacher:question_delete" question.pk %}"><button type="button">Delete</button></a> <br>
+{%endfor%}
+{%if taken_quizzes%}
+student takers :
+{%endif%}
+
+    {%for taken_quizz in taken_quizzes%}
+        student_name:{{taken_quizz.student.user.username}}<br>
+        student_score:{{taken_quizz.score}}<br>
+        date_taken:{{taken_quizz.date}}<br>
+    {%empty%}
+    <br>
+    no body take your quizz your suck
+    {%endfor%}

@@ -1,0 +1,21 @@
+
+
+teacher:{{request.user.username}}<br />
+{%for quizz in quizzes%}
+
+quizz_name:{{quizz.name}}<br />
+subject:{{quizz.subject}}<br />
+no.of.q:{{quizz.question_count}}<br />
+no.of student taken the quizz:{{quizz.taken_count}}<br />
+<form action="{%url "teacher:quizz_update" quizz.pk %}"><br >
+
+    <button type=" sumbit">Update</button>
+    <a href="{%url "teacher:quizz_delete" quizz.pk %}"><button type="button">Delete</button></a>
+    <a href="{%url "teacher:quizz_details" quizz.pk %}"><button type="button">Details</button></a>
+    <a href="{%url "teacher:question_add" quizz.pk %}"><button type="button">Add question</button></a>
+    
+</form>
+
+{%empty%}
+NO quizzes you set yet
+{%endfor%}

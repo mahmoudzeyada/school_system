@@ -1,0 +1,10 @@
+<h1> Quizzes </h1>
+
+{%for quizz in quizzes%}
+<h3>quizz name:</h3> {{quizz.name}} </br>
+<h3>quizz teacher:</h3> {{quizz.owner.username}} </br>
+<h3>quizz subject:</h3> {{quizz.subject.name}} </br>
+</hr>
+    {% empty %}
+    no quizzes avaliable for you
+{%endfor%}

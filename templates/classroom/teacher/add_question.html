@@ -1,0 +1,9 @@
+<h1>add question</h1>
+quizz_name:{{quizz.name}}
+<br> <br>
+<form method="POST">
+    {%csrf_token%}
+    {{form}} <br> <br >
+    <button type="submit">add question</button>
+    <a href="{% url "teacher:quizz_list" %}"><button type="button">enough!</button></a>
+</form>

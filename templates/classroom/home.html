@@ -1,0 +1,8 @@
+<h1>home</h1>
+{%if request.user.is_teacher%}
+    <h1>teacher</h1>
+{%elif request.user.is_student%}
+<h1>student</h1>
+{%else%}
+<h1>hacker</h1>
+{%endif%}

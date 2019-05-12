@@ -1,0 +1,9 @@
+<form method="POST">
+{%csrf_token%}
+quizz_name:{{quizz}}<br>
+question:{{question}}<br>
+{{question_form}}<br>
+{{answer_formset}}<br>
+<button type="submit">set</button>
+
+</form>

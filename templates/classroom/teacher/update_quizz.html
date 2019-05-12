@@ -1,0 +1,15 @@
+<h1>Update</h1>
+
+<form method="POST">
+    {%csrf_token%}
+    {{form.as_p}}
+    {%for question in questions %}
+    question {{question.txt}}
+    no of answers {{question.count_answers}}
+    {%empty%}
+    no questions yet <br >
+
+    {%endfor%}
+    <button type="submit">Update</button>
+    <a href="{%url "teacher:quizz_list"  %}" > <button type="button"> quizzes </button> </a>
+</form>

@@ -1,0 +1,6 @@
+<form method="POST">
+    {%csrf_token%}
+    <p>are you sure to delete {{quizz.anme}}?</p>
+    <button type="submit">yes</button>
+    <a href="{%url "teacher:quizz_list" %}" ><button type="button">No </button></a>
+</form>

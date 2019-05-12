@@ -1,0 +1,13 @@
+<h1>taken quizzes</h1>
+
+{%for quiz in taken_quizzes%}
+    <hr>the subject</hr> {{quiz.quizz.subject.name}} </br>
+    <hr>quizz name</hr> {{quiz.quizz.name}} </br>
+    <hr>score</hr> {{quiz.score}} </br>
+    <hr>date_taken</hr> {{quiz.date}} </br>
+
+    
+
+    {%empty%}
+    no quizzes has taken
+{%endfor%}
